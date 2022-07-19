@@ -2,6 +2,7 @@ import React from 'react'
 
 export const ProductCard = () => {
   return (
-    <div>ProductCard</div>
+    <div className='product-card'><p>HEY</p></div>
   )
 }
+export default ProductCard;

@@ -2,6 +2,7 @@ import React from 'react'
 
 export const ProductDetail = () => {
   return (
-    <div>ProductDetail</div>
+    <div className='product-detail'><p>HEY p</p></div>
   )
 }
+export default ProductDetail;

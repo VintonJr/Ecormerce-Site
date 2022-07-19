@@ -2,6 +2,7 @@ import React from 'react'
 
 export const ProductListing = () => {
   return (
-    <div>ProductListing</div>
+    <div className='product-listing'><p>HEY</p></div>
   )
 }
+export default ProductListing;

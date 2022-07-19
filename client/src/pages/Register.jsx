@@ -2,6 +2,7 @@ import React from 'react'
 
 export const Register = () => {
   return (
-    <div>Register</div>
+    <div className='register'><p>HEY r</p></div>
   )
 }
+export default Register;
