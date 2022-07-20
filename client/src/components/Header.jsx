@@ -15,12 +15,11 @@ export const Header = () => {
       <input className="search" type="search" placeholder="Search" aria-label="Search"/>
       <button className="btn btn-outline-success" type="submit">Search</button>
     </form>
-       <div className="navbar-nav">
        <img className="cart"  src={cart} alt="cart"/>
         <Link to="/register" className="nav-link" >Register</Link>
         <Link to="/login" className="nav-link" >Login</Link>
         </div>
-  </div>
+
 </nav>
       
 

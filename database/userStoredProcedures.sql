@@ -4,8 +4,7 @@ create or alter PROCEDURE register_queries (
                                           @last_name     VARCHAR(255),
                                           @email        VARCHAR(255),
                                           @password          VARCHAR(255),										  
-										  @isAdmin BIT ,
-                                          @StatementType  NVARCHAR (20) = '')
+										  @StatementType  NVARCHAR (20) = '')
 AS
   BEGIN
       IF @StatementType = 'Insert'
@@ -16,15 +15,15 @@ AS
                          first_name,
                          last_name,
                          email,
-						 password,						
-						 isAdmin)
+						 password						
+						 )
             VALUES     (
 						@user_name,
                          @first_name,
                          @last_name,
                          @email,
-						 @password,						
-						 @isAdmin)
+						 @password					
+						 )
         END
 
       IF @StatementType = 'Select'
@@ -93,4 +92,16 @@ AS
 BEGIN
 SELECT * FROM users
 WHERE user_name=@user_name
+END
+
+PAGINATION STORED PROCEDURE
+create or alter PROCEDURE product_pagination(
+@row_count int,
+@page_number int)
+AS
+BEGIN 
+SELECT product_image,price from products
+ORDER BY product_id
+offset @row_count* @page_number rows
+fetch next @row_count rows only
 END
