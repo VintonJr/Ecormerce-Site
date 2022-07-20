@@ -1,7 +1,15 @@
-body {
-  margin: 0;
- background-color: aqua;
-}
+@import "./css/App.css";
+@import "./css/header.css";
+@import "./css/home.css";
+@import "./css/productlisting.css";
+@import "./css/productcard.css";
+@import "./css/productdetail.css";
+@import "./css/pagenotfound.css";
+@import "./css/login.css";
+@import "./css/footer.css";
+
+
+
 
 
 

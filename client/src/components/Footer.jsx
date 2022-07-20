@@ -2,7 +2,9 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='footer'><p>HEY foo</p></div>
+    <div className='footer fixed-bottom'>
+      <p>Copyright@ 2022</p>
+    </div>
   )
 }
 export default Footer;
