@@ -1,4 +1,39 @@
 body {
     margin: 0;
-   background-color: rgb(0, 255, 115);
-  }
+    /*background-color: rgb(0, 255, 115);*/
+}
+
+.home {
+    background-image: url("https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp");
+    background-size: auto;
+}
+
+img {
+    border-radius: 4px;
+    width: 200px;
+}
+
+.carousel-item {
+    height: 22rem;
+    /*color: rgb(0, 255, 115);*/
+    position: relative;
+    margin-top: 20px;
+}
+
+.carousel-item h1 {
+    font-size: 80px;
+    padding-bottom: 20px;
+}
+
+.carousel-item p {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.container {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding-bottom: 80px;
+}
