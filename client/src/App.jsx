@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home'
 import ProductDetail from './pages/ProductDetail'
 import PageNotFound from './pages/PageNotFound'
-import Register from "./pages/register/Register"
+import Register from "./pages/Register"
 import Login from './pages/Login';
 
 function App() {

@@ -10,7 +10,7 @@ export const Home = () => {
     console.log(products)
     return (
     <div className='home'>
-    <ProductListing movies={products}/>
+    <ProductListing products={products}/>
       
       </div>
   )

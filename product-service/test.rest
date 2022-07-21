@@ -2,19 +2,11 @@ POST http://localhost:5000/product/createProduct
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
-    "product_name":"Under Armour Men's Charged Assert 9 Running Shoe",
-    "price":4600.60,
-    "description":"Made in USA or Imported. Rubber sole. Lightweight mesh upper with 3-color digital print delivers complete breathability. Durable leather overlays for stability & that locks in your midfoot",
-    "category":" Running Shoes",
-    "product_image":"https://m.media-amazon.com/images/I/41l2imvuWJL._AC_UY575_.jpg"
-=======
     "product_name":"Bycicle",
     "price":12000000.00,
     "description":"Mercedes",
     "category":"s-class",
     "product_image":"https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
->>>>>>> origin/nav
 
 
 }  
@@ -23,25 +15,17 @@ PUT  http://localhost:5000/product/updateProduct
 Content-Type: application/json
 
 {
-<<<<<<< HEAD
-    "product_name":"Merrell MR127 Havoc Vent Casual Shoes",
-    "price":17000.60,
-    "description":"The men’s Havoc Vent ltr trail shoe from Merrell is perfect for everyday walking and features uppers made from suede leather and mesh with a breathable mesh lining that wicks moisture away from the foot.",
-    "category":" Casual",
-    "product_image":"https://citywalk.co.ke/wp-content/uploads/2021/10/MR127-510x510.jpg"
-=======
     "product_name":"Car",
     "price":15000.00,
     "description":"SuperCar",
-    "category":"C-class",
->>>>>>> origin/nav
+    "category":"C-class"
 
 }
 ###
 GET http://localhost:5000/product/viewProduct
 
 ###
-GET http://localhost:5000/product/product/Merrell MR127 Havoc Vent Casual Shoes
+GET http://localhost:5000/product/product/Bycicle
 
 ###
 
