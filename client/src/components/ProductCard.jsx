@@ -3,12 +3,11 @@ import {Link} from 'react-router-dom'
 export const ProductCard = ({product}) => {
   return (
     <div className='product-card'>
-    <div className="card-body">
-<Link to="/product">
-  <img className="product-img" src={product.product_image}  alt="product-pic"/> </Link>  
- <p>{product.product_name}</p>
- <p>{product.product_price}</p>
-</div>
+    <Link to="/product">
+  <img src={product.product_image} alt="" /></Link>
+  <p>{product.product_name}</p>
+  <p> {product.category}</p>
+   <p>${product.price}</p>
     </div>
   )
 }
