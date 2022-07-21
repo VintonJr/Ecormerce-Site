@@ -3,6 +3,7 @@ import './register.css'
 import{Link}from'react-router-dom'
 import axios from 'axios'
 
+
 function Register(){
   const[user_name, setUsername]=useState('');
   const[first_name,setFirstName]=useState('');
