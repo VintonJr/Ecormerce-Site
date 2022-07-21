@@ -3,12 +3,12 @@ Content-Type: application/json
 
 {
  
- "user_name":"brandy", 
+ "user_name":"mjhhbnno", 
 "first_name":"kim", 
 "last_name":"baohg", 
-"email":"moiuytfdesy6754gfuy@gmail.com", 
+"email":"mjhhhhjy@gmail.com", 
 "password":"ygu5r675q#",  
-"isAdmin":0
+"isAdmin":1
 }
 
 ###
@@ -16,7 +16,7 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email":"moiuytfdesy6754gfuy@gmail.com",
+    "email":"mjhhhhjy@gmail.com",
     "password":"ygu5r675q#"
 }
 ###

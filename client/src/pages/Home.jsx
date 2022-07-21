@@ -1,8 +1,18 @@
-import React from 'react'
-
+import React,{useEffect,useState} from 'react'
+import ProductListing from '../components/ProductListing'
+import axios from 'axios'
+const url ="http://localhost:5000/product/viewProduct"
 export const Home = () => {
-  return (
-    <div className='home'><p>HEY h</p></div>
+  const[products,setProducts]=useState([])
+    useEffect(()=>{
+        axios.get(url).then(res=> setProducts(res.data.results))
+    }, [])
+    console.log(products)
+    return (
+    <div className='home'>
+    <ProductListing movies={products}/>
+      
+      </div>
   )
 }
 export default Home;
