@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors=require('cors')
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 const port = process.env.PORT;
 
 //app.use('/', router)
-
+app.use(cors())
 app.use('/product', productRouter)
 
 app.use('/order', orderRouter)
