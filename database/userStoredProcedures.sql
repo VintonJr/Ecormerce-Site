@@ -22,14 +22,20 @@ AS
                          @first_name,
                          @last_name,
                          @email,
+<<<<<<< HEAD
+						 @password						
+						)
+=======
 						 @password					
 						 )
+>>>>>>> origin/nav
         END
 
       IF @StatementType = 'Select'
         BEGIN
             SELECT *
             FROM   users
+        END
         END
 
       
@@ -41,7 +47,7 @@ AS
 @userID int ,  
 @user_name VARCHAR(255),
     @email        VARCHAR(255),
-    @password          VARCHAR(255),
+    @password          VARCHAR(255)
 	  
 	  )
 
@@ -52,7 +58,7 @@ BEGIN
         UPDATE users SET 
 		   user_name = @user_name,
 	        email=@email,
-			password=@password,
+			password=@password
 			      
 	       WHERE user_id = @userID
 	
