@@ -8,6 +8,7 @@ import ProductDetail from './pages/ProductDetail'
 import PageNotFound from './pages/PageNotFound'
 import Register from "./pages/Register"
 import Login from './pages/Login';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
        <Route path="/product/:product_name" element={<ProductDetail/>}/>
        <Route path="/login" element={<Login/>}/>
        <Route path="/register" element={<Register/>}/>
+       <Route path="/cart" element={<Cart/>}/>
        <Route  path="*" element={<PageNotFound/>}/>
        
  

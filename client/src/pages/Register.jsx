@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './register.css' 
+import '../css/register.css' 
 import{Link}from'react-router-dom'
 import axios from 'axios'
 
@@ -77,10 +77,11 @@ function Register(){
           placeholder='Enter password'
           required
           />
-          <button id='register-btn'>Register.</button>
+          <Link to="/register">
+          <button id='register-btn' className='btn btn-primary'>Register.</button>
+          </Link>
           <p>Already Registered?<br />
                 <span>
-                  {/*router link*/}
                   <Link to="/login">Sign in</Link>
                 </span>
             
