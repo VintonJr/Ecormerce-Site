@@ -6,10 +6,8 @@ const poolPromise = require('../config/poolPromise')
 
 module.exports = {
     register: async(req, res) => {
-        let { user_name, first_name, last_name, email, password, isAdmin } = req.body
-
-
-       try{
+        let { user_name, first_name, last_name, email, password } = req.body
+      try{
         let pool = await poolPromise()
         const bcryptPassword = await bcrypt.hash(password, 10);
         const verifyEmail= await pool.request()
@@ -38,7 +36,6 @@ module.exports = {
             .input('last_name', last_name)
             .input('email', email)
             .input('password', bcryptPassword)
-            .input('isAdmin', isAdmin)
             .input('StatementType', 'Insert')
             .execute('dbo.register_queries')
 

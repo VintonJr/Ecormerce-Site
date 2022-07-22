@@ -22,8 +22,10 @@ AS
                          @first_name,
                          @last_name,
                          @email,
+
 						 @password					
 						 )
+
         END
 
       IF @StatementType = 'Select'

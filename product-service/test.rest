@@ -2,11 +2,13 @@ POST http://localhost:5000/product/createProduct
 Content-Type: application/json
 
 {
+
     "product_name":"ADILETTE LITE SLIDES",
     "price":4650.99,
     "description":"Free your feet. These juniors' Adilette Lite Slides let your toes take in the sun. An extra-soft footbed cushions each step. An adidas Trefoil on top nods back to their sporty origins as a locker room slide for the '70s German football team.",
     "category":"Mens Shoes",
     "product_image":"https://assets.adidas.com/images/w_940,f_auto,q_auto/0a5dae6ca5aa40b1b511ab0b00978546_9366/EG8271_01_standard.jpg"
+
 
 
 }  
@@ -15,11 +17,13 @@ PUT  http://localhost:5000/product/updateProduct
 Content-Type: application/json
 
 {
+
     "product_name":"Sneakers",
     "price":1800.65,
     "description":"Light Weight Mesh Surface Outdoor Breathable and Comfy Sneakers",
     "category":"Mens Shoes",
     "product_image":"https://riogiftshop.com/wp-content/uploads/2021/04/dd4803e7-489f-49b5-a0ad-a3707eeb68ab-450x450.jpg"
+
 
 }
 ###

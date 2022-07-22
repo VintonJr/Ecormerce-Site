@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import logo from '../images/logo.jpg'
+import logo from '../images/logo1.png'
 import cart from '../images/cart3.svg'
 
 export const Header = () => {
