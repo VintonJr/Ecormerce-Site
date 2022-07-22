@@ -10,7 +10,9 @@ export const ProductDetail = () => {
   const detail=useSelector(state=>state.detail)
   useEffect(() => {
     
-    axios.get(`http://localhost:5000/product/product/${product_name}`).then(res=>(dispatch (addProductDetail (res.data.results))))
+    axios.get(`http://localhost:5000/product/product/${product_name}`).then(res=>{
+    
+    dispatch (addProductDetail (res.data.results[0]))})
     
   
   }, [])
