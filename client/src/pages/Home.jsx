@@ -5,7 +5,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { addproducts } from '../features/slices/productsReducer'
 import { Link } from 'react-router-dom'
 
-const url ="http://localhost:5000/product/viewProduct"
+const url ="http://localhost:8000/product/viewProduct"
 export const Home = () => {
  
   const dispatch = useDispatch()
@@ -27,20 +27,18 @@ export const Home = () => {
         </ol>
         <div className='carousel-inner'>
           <div className='carousel-item active' >
-          <img id='carousel-item-image' class="d-block w-100" src="images/slide-3.jpg" alt="First slide"></img>
+          <img id='carousel-item-image' className="d-block w-100" src="images/slide-3.jpg" alt="First slide"></img>
             <div className='container'>
             <h1>Welcome!</h1>
            
             <p>Supashop ... Home of best deals of up to 70%<br/>Enjoy your shopping.</p>
-            <Link to="/register">
-            <a href='#' className='btn btn-lg btn-primary'>Sign Up.</a>
-            </Link>
+            <Link to="/register" className='btn btn-lg btn-primary'>Sign Up.</Link>
             </div>
 
             
             </div>
             <div className='carousel-item'>
-            <img id='carousel-item-image' class="d-block w-100" src="images/slide-2.jpg" alt="First slide"></img>
+            <img id='carousel-item-image' className="d-block w-100" src="images/slide-2.jpg" alt="First slide"></img>
             <div className='container'>
             <h1>Welcome!</h1>
             <p>Supashop ... Home of best deals of up to 70%<br/>Enjoy your shopping.</p>

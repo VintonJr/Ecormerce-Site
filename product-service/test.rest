@@ -1,4 +1,4 @@
-POST http://localhost:5000/product/createProduct
+POST http://localhost:8000/product/createProduct
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 
 }  
 ### 
-PUT  http://localhost:5000/product/updateProduct
+PUT  http://localhost:8000/product/updateProduct
 Content-Type: application/json
 
 {
@@ -27,18 +27,18 @@ Content-Type: application/json
 
 }
 ###
-GET http://localhost:5000/product/viewProduct
+GET http://localhost:8000/product/viewProduct
 
 ###
-GET http://localhost:5000/product/product/Bycicle
-
-###
-
-DELETE  http://localhost:5000/product/product/Merrell MR127 Havoc Vent Casual Shoes
+GET http://localhost:8000/product/product/Bycicle
 
 ###
 
-POST http://localhost:5000/order/createOrder
+DELETE  http://localhost:8000/product/product/Merrell MR127 Havoc Vent Casual Shoes
+
+###
+
+POST http://localhost:8000/order/createOrder
 Content-Type: application/json
 
 {
