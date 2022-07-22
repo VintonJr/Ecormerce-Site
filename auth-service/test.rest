@@ -8,7 +8,7 @@ Content-Type: application/json
 "last_name":"baohg", 
 "email":"mjhhhhjy@gmail.com", 
 "password":"ygu5r675q#",  
-"isAdmin":1
+
 }
 
 ###

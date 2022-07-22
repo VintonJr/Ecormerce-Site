@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home'
 import ProductDetail from './pages/ProductDetail'
 import PageNotFound from './pages/PageNotFound'
-import Register from "./pages/register/Register"
+import Register from "./pages/Register"
 import Login from './pages/Login';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
        <Routes>
        
        <Route path="/home" element={<Home/>}/>
-       <Route path="/product" element={<ProductDetail/>}/>
+       <Route path="/product/:product_name" element={<ProductDetail/>}/>
        <Route path="/login" element={<Login/>}/>
        <Route path="/register" element={<Register/>}/>
        <Route  path="*" element={<PageNotFound/>}/>

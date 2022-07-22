@@ -22,13 +22,8 @@ AS
                          @first_name,
                          @last_name,
                          @email,
-<<<<<<< HEAD
 						 @password						
 						)
-=======
-						 @password					
-						 )
->>>>>>> origin/nav
         END
 
       IF @StatementType = 'Select'
