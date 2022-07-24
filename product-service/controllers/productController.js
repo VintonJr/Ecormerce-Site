@@ -74,24 +74,45 @@ module.exports = {
 
         }
     },
-    viewProducts: async(req, res) => {
+   
+        viewProducts: async (req, res) => {
+            let pool = await poolPromise();
+            pool.query(`select * from Products`).then((results) => {
+              if (results.recordset) {
+                return res.status(200).json({
+                  status: 200,
+                  success: true,
+                  message: 'These are all the products',
+                  results: results.recordset,
+                });
+              }
+              res.status(404).json({
+                status: 404,
+                success: false,
+                message: 'There are no products to view',
+                results: {},
+              });
+            });
+          },
+          searchProduct: async (req, res) => {
 
-        try {
+         try {
+           
             
-            let pool = await poolPromise()
-            const result=await pool.request()
-            .input('product_name',req.query.product_name)
-            .execute(`SearchProduct`)
-            const products=result.recordset;
+             let pool = await poolPromise()
+             const result=await pool.request()
+             .input('product_name',req.query.product_name)
+             .execute(`SearchProduct`)
+             const products=result.recordset;
 
             
-                res.json(products)
+                 res.json(products)
             
-        } catch (err) {
-            res.status(500).json(err)
+         } catch (err) {
+             res.status(500)
 
-        }
-    },
+         }
+     },
     deleteProduct: async(req, res) => {
 
         let { product_name } = req.params

@@ -6,9 +6,12 @@ const productsSlice = createSlice({
     reducers:{
         addproducts: (state, {payload})=>{
             return state= payload
+        },
+        searchproducts:(state,{payload})=>{
+            return state=payload
         }
     }
 })
 
-export const {addproducts} = productsSlice.actions
+export const {addproducts,searchproducts} = productsSlice.actions
 export default productsSlice.reducer;

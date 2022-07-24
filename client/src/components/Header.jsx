@@ -3,23 +3,22 @@ import { Link } from 'react-router-dom';
 import logo from '../images/logo1.png'
 import cart from '../images/cart3.svg'
 import axios from 'axios'
-import {useParams}from 'react-router-dom'
 
 
 export const Header = () => {
-  const {product_name}=useParams();
-
+const[results,setResults]=useState('')
   const [query, setQuery]=useState('');
   const searchProduct = async(e)=>{
     e.preventDefault();
     console.log("Searching");
     try{
       
-      const url=`http://localhost:8000/product/product/viewProduct?&query=${query}`;
+      const url=` http://localhost:8000/product/search?product_name=${query}`;
       const res= await axios.get(url);
      
       console.log(res.data);
-      setQuery(res.data.results[0]);
+      console.log(query)
+      setResults(res.data);
     }
     catch(e){
       console.log(e);
@@ -37,8 +36,8 @@ export const Header = () => {
     <Link to="/home">
      <img className="navbar-brand"  src={logo} alt="site-logo"/></Link>
      <form className="search- d-flex" onSubmit={searchProduct}>
-      <input className="search" type="search" placeholder="Search" aria-label="Search"/>
-      <button className="btn btn-outline-success" type="submit" value={query} onChange={changeHandler}>Search</button>
+      <input className="search" type="search" placeholder="Search"onChange={changeHandler}  value={query}aria-label="Search"/>
+      <button className="btn btn-outline-success" type="submit" >Search</button>
     </form>
     <Link to={"/Cart"}>
        <img className="cart"  src={cart} alt="cart"/>
@@ -48,8 +47,9 @@ export const Header = () => {
         </div>
 
 </nav>
-      
-
+      <div>
+        {results?results.map((result)=>(<ul><li key={result.product_id} result={result}></li></ul>)):"Loading"}
+      </div>
       </div>
   )
 }
