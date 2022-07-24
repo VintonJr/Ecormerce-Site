@@ -53,3 +53,12 @@ AS
             WHERE  product_name = @product_name
         END
   END
+
+
+searchstoredprocedure
+CREATE OR ALTER PROCEDURE SearchProduct(
+@product_name varchar (100))
+AS
+BEGIN 
+SELECT * FROM products where Lower(product_name)LIKE'%' + LOWER(@product_name) +'%'
+END

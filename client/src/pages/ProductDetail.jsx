@@ -24,9 +24,13 @@ export const ProductDetail = () => {
         <img src={detail.product_image} alt="" />
         <p>{detail.product_name}</p>
         <p> {detail.category}</p>
+<<<<<<< HEAD
         <p>{detail.description}</p>
         <p>Ksh.{detail.price}</p>
         
+=======
+        <small className='price'>${detail.price}</small>
+>>>>>>> cad86d44d965bce574ce7c32322b3534f615dc10
         <button className='btn btn-primary'>Add to cart</button>
         </div>
    
