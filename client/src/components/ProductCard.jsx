@@ -1,7 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import '../css/register.css'
+import '../css/productlisting.css'
+import { useCart } from 'react-use-cart'
+
+
 export const ProductCard = ({product}) => {
+
+//const { addItem } = useCart();
+
+
   return (
     <div className='product-card'>
 
@@ -10,7 +17,14 @@ export const ProductCard = ({product}) => {
       <p>{product.product_name}</p>
       <p> {product.category}</p>
       <p>ksh{product.price}</p>
-      <Link to="/cart"><button className='btn btn-primary'>Add to cart</button></Link>
+
+      <Link to="/cart">
+        <button 
+            className='btn btn-primary'
+            
+          >Add to cart
+        </button>
+        </Link>
 
     </div>
   )
