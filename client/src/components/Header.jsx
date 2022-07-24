@@ -4,7 +4,7 @@ import logo from '../images/logo1.png'
 import cart from '../images/cart3.svg'
 import axios from 'axios'
 
-
+import Home from '../pages/Home'
 export const Header = () => {
 const[results,setResults]=useState('')
   const [query, setQuery]=useState('');
@@ -15,10 +15,12 @@ const[results,setResults]=useState('')
       
       const url=` http://localhost:8000/product/search?product_name=${query}`;
       const res= await axios.get(url);
-     
       console.log(res.data);
       console.log(query)
-      setResults(res.data);
+     
+      setResults(res.data)
+      console.log(results)
+      
     }
     catch(e){
       console.log(e);
@@ -48,7 +50,7 @@ const[results,setResults]=useState('')
 
 </nav>
       <div>
-        {results?results.map((result)=>(<ul><li key={result.product_id} result={result}></li></ul>)):"Loading"}
+        {results.map}
       </div>
       </div>
   )
