@@ -10,7 +10,7 @@ export const ProductDetail = () => {
   const detail=useSelector(state=>state.detail)
   useEffect(() => {
     
-    axios.get(`http://localhost:5000/product/product/${product_name}`).then(res=>{
+    axios.get(`http://localhost:8000/product/product/${product_name}`).then(res=>{
     
     dispatch (addProductDetail (res.data.results[0]))})
     
@@ -25,6 +25,7 @@ export const ProductDetail = () => {
         <p>{detail.product_name}</p>
         <p> {detail.category}</p>
         <small className='price'>${detail.price}</small>
+        <button className='btn btn-primary'>Add to cart</button>
         </div>
    
     

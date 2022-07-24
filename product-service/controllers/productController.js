@@ -77,18 +77,18 @@ module.exports = {
     viewProducts: async(req, res) => {
 
         try {
+            
             let pool = await poolPromise()
-            pool.query(`select * from products`).then(results => {
-                console.log(results.recordset)
-                res.json({
-                    status: 200,
-                    success: true,
-                    message: "Products",
-                    results: results.recordset
-                })
-            })
+            const result=await pool.request()
+            .input('product_name',req.query.product_name)
+            .execute(`SearchProduct`)
+            const products=result.recordset;
+
+            
+                res.json(products)
+            
         } catch (err) {
-            console.log(err.message)
+            res.status(500).json(err)
 
         }
     },
