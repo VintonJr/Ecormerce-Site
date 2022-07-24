@@ -1,10 +1,11 @@
 const productRouter = require('express').Router();
 
-const { createProduct, updateProduct, viewProducts, getProduct, deleteProduct } = require('../controllers/productController')
+const { createProduct, updateProduct, viewProducts, getProduct, deleteProduct ,searchProduct} = require('../controllers/productController')
 
 productRouter.post('/createProduct', createProduct)
 
 productRouter.put('/updateProduct', updateProduct)
+productRouter.get('/search', searchProduct)
 
 productRouter.get('/product/:product_name', getProduct)
 

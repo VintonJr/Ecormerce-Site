@@ -25,6 +25,7 @@ export const ProductDetail = () => {
         <p>{detail.product_name}</p>
         <p> {detail.category}</p>
         <small className='price'>${detail.price}</small>
+        <button className='btn btn-primary'>Add to cart</button>
         </div>
    
     
