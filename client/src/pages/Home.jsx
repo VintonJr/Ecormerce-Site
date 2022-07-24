@@ -21,6 +21,7 @@ export const Home = () => {
     return (
       
     <div className='home'>
+
      
      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
   <div className="carousel-indicators">
@@ -42,6 +43,7 @@ export const Home = () => {
   </div>
   
 </div>
+
       
       
       <div>
