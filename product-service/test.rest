@@ -3,9 +3,9 @@ Content-Type: application/json
 
 {
 
-    "product_name":"ADILETTE LITE SLIDES",
-    "price":4650.99,
-    "description":"Free your feet. These juniors' Adilette Lite Slides let your toes take in the sun. An extra-soft footbed cushions each step. An adidas Trefoil on top nods back to their sporty origins as a locker room slide for the '70s German football team.",
+    "product_name":"Trend Light Weight Mesh Surface Outdoor Sport Breathable and Comfy Sneakers",
+    "price":3650.99,
+    "description":"This sneaker is worth having-Features; Fabric: Comfortable and breathable fabric, fine texture, soft and durable. lining: comfortable and breathable inside, circulation and ventilation make your feet more dry. Sole: soft cushioning, non-slip wear-resistant outsole.",
     "category":"Mens Shoes",
     "product_image":"https://assets.adidas.com/images/w_940,f_auto,q_auto/0a5dae6ca5aa40b1b511ab0b00978546_9366/EG8271_01_standard.jpg"
 
@@ -30,12 +30,12 @@ Content-Type: application/json
 GET http://localhost:8000/product/viewProduct
 
 ###
-GET http://localhost:8000/product/product/Bycicle
+GET http://localhost:8000/product/product/ADILETTE LITE SLIDES
 
 ###
 
 
-GET http://localhost:8000/product/search?product_name=jordan
+GET http://localhost:8000/product/search?product_name=ADILETTE LITE SLIDES
 
 
 DELETE  http://localhost:8000/product/product/Merrell MR127 Havoc Vent Casual Shoes

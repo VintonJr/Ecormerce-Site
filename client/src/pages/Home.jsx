@@ -7,7 +7,7 @@ import c3 from '../images/main.jpg'
 
 import { useDispatch,useSelector } from 'react-redux'
 import { addproducts } from '../features/slices/productsReducer'
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 const url ="http://localhost:8000/product/viewProduct"
 export const Home = () => {

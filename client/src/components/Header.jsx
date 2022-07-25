@@ -37,19 +37,24 @@ const[results,setResults]=useState('')
      <img className="navbar-brand"  src={logo} alt="site-logo"/></Link>
      <form className="search- d-flex" onSubmit={searchProduct}>
       <input className="search" type="search" placeholder="Search"onChange={changeHandler}  value={query}aria-label="Search"/>
-      <button className="btn btn-outline-success" type="submit" >Search</button>
+      <button className="btn btn-primary" type="submit" >Search</button>
     </form>
+    <div className='cart-span'>
     <Link to={"/Cart"}>
        <img className="cart"  src={cart} alt="cart"/>
        </Link>
-        <Link to="/register" className="nav-link" >Register</Link>
-        <Link to="/login" className="nav-link" >Login</Link>
+       <span >0</span>
+    </div>
+
+        <Link to="/register" className="nav-link" ><><button className='btn btn-primary'>Register</button></></Link>
+        <Link to="/login" className="nav-link" ><button className='btn btn-primary'>Login</button></Link>
         </div>
 
 </nav>
+{/*
       <div>
         {results?results.map((result)=>(<ul><li key={result.product_id} result={result}></li></ul>)):"Loading"}
-      </div>
+   </div>*/}
       </div>
   )
 }

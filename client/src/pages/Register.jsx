@@ -78,7 +78,8 @@ function Register(){
           placeholder='Enter password'
           required
           />
-          <button id='register-btn'>Register.</button>
+          <Link to={"/home"}>
+          <button id='register-btn' className='btn btn-primary'>Register.</button></Link>
           <p>Already Registered?<br />
                 <span>
                   {/*router link*/}

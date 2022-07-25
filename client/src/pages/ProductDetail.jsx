@@ -3,6 +3,7 @@ import {useParams}from 'react-router-dom'
 import axios from "axios"
 import { addProductDetail } from '../features/slices/productDetailReducer';
 import { useDispatch, useSelector } from 'react-redux';
+import '../css/productdetail.css'
 
 export const ProductDetail = () => {
   const {product_name}=useParams();
@@ -24,13 +25,9 @@ export const ProductDetail = () => {
         <img src={detail.product_image} alt="" />
         <p>{detail.product_name}</p>
         <p> {detail.category}</p>
-<<<<<<< HEAD
         <p>{detail.description}</p>
         <p>Ksh.{detail.price}</p>
         
-=======
-        <small className='price'>${detail.price}</small>
->>>>>>> cad86d44d965bce574ce7c32322b3534f615dc10
         <button className='btn btn-primary'>Add to cart</button>
         </div>
    
