@@ -76,8 +76,10 @@ module.exports = {
     },
    
         viewProducts: async (req, res) => {
-            let pool = await poolPromise();
-            pool.query(`select * from Products`).then((results) => {
+                      
+            let pool = await poolPromise()
+            
+            pool.query(`select * from products`).then((results) => {
               if (results.recordset) {
                 return res.status(200).json({
                   status: 200,
@@ -94,6 +96,24 @@ module.exports = {
               });
             });
           },
+          productPagination: async (req, res) => {
+            
+            try {
+            
+                let pool = await poolPromise()
+                const result=await pool.request()
+                .input('row_count',req.query.row_count)
+                .input('page_number',req.query.page_number)
+                .execute(`product_pagination`)
+                const products=result.recordset;
+        
+               
+                    res.json(products)
+                } catch (err) {
+                    res.status(500)
+        
+                }
+            },
           searchProduct: async (req, res) => {
 
          try {

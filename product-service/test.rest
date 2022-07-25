@@ -28,6 +28,9 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:8000/product/viewProduct
+###
+GET http://localhost:8000/product/productPagination?row_count=4&page_number=2
+
 
 ###
 GET http://localhost:8000/product/product/Bycicle

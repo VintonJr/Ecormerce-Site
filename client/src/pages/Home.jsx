@@ -13,11 +13,11 @@ const url ="http://localhost:8000/product/viewProduct"
 export const Home = () => {
  
   const dispatch = useDispatch()
-      const products = useSelector(state=>state.products)
+  const products = useSelector(state=>state.products)
   useEffect(() => {
     axios.get(url).then(res=> dispatch(addproducts(res.data.results)))
-  }, [dispatch])
-    
+  }, [])
+    // console.log(products)
     return (
       
     <div className='home'>
