@@ -1,32 +1,17 @@
-import React,{useState}from 'react'
+import React,{useState,useEffect}from 'react'
 import { Link } from 'react-router-dom';
 import logo from '../images/logo1.png'
 import cart from '../images/cart3.svg'
-import axios from 'axios'
-
 
 export const Header = () => {
-const[results,setResults]=useState('')
-  const [query, setQuery]=useState('');
-  const searchProduct = async(e)=>{
-    e.preventDefault();
-    console.log("Searching");
-    try{
-      
-      const url=` http://localhost:8000/product/search?product_name=${query}`;
-      const res= await axios.get(url);
-     
-      console.log(res.data);
-      console.log(query)
-      setResults(res.data);
-    }
-    catch(e){
-      console.log(e);
-    }
-  }
 
+
+const [search, setSearch]=useState('');
+ const searchProduct = async(e)=>{
+        e.preventDefault();
+             }
   const changeHandler=(e)=>{
-    setQuery(e.target.value);
+    setSearch(e.target.value);
   } 
    return (
     <div className='header'>
@@ -36,8 +21,10 @@ const[results,setResults]=useState('')
     <Link to="/home">
      <img className="navbar-brand"  src={logo} alt="site-logo"/></Link>
      <form className="search- d-flex" onSubmit={searchProduct}>
-      <input className="search" type="search" placeholder="Search"onChange={changeHandler}  value={query}aria-label="Search"/>
-      <button className="btn btn-primary" type="submit" >Search</button>
+
+      <input className="search" type="search" placeholder="Search" onChange={changeHandler}  value={search}aria-label="Search"/>
+      <Link to={`/search/${search}`}><button className="btn btn-outline-success" type="submit" >Search</button></Link>
+
     </form>
     <div className='cart-span'>
     <Link to={"/Cart"}>
@@ -53,9 +40,13 @@ const[results,setResults]=useState('')
 </nav>
 {/*
       <div>
-        {results?results.map((result)=>(<ul><li key={result.product_id} result={result}></li></ul>)):"Loading"}
-   </div>*/}
+
+             {/* <ProductListing products ={products}/> */}
+      {/* {results.map((result) =>{<div key={result.product_id}><p>{result.product_name}</p> </div>})} */}
+      </div>
+
       </div>
   )
 }
+
 export default Header;
