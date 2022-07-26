@@ -23,9 +23,12 @@ export const Login = () => {
     <form className="login-form" onSubmit={handleSubmit}>
       <input type="email" className="form-control"  placeholder="email" value={email} onChange={(e)=>setEmail(e.target.value)} aria-required/>
       <input type="password" className="form-control" placeholder="Password"  value={password} onChange={(e)=>setPassword(e.target.value)}aria-required/>
-       <button type="submit" className="btn btn-primary">Sign in</button>
+      <Link to={"/home"}>
+          <button type="submit" className="btn btn-primary">Sign in</button>
+      </Link>
+       
          </form>
-         <Link to="/register"> No Account ?Register </Link>
+         <Link to="/register"> No Account? Register </Link>
   
 </div>
     
