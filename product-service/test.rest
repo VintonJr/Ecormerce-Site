@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
 
-    "product_name":"ADILETTE LITE SLIDES",
+    "product_name":"njjb",
     "price":4650.99,
     "description":"Free your feet. These juniors' Adilette Lite Slides let your toes take in the sun. An extra-soft footbed cushions each step. An adidas Trefoil on top nods back to their sporty origins as a locker room slide for the '70s German football team.",
     "category":"Mens Shoes",
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 {
 
-    "product_name":"Sneakers",
+    "product_name":"Wakora",
     "price":1800.65,
     "description":"Light Weight Mesh Surface Outdoor Breathable and Comfy Sneakers",
     "category":"Mens Shoes",
@@ -29,7 +29,7 @@ Content-Type: application/json
 ###
 GET http://localhost:8000/product/viewProduct
 ###
-GET http://localhost:8000/product/productPagination?row_count=4&page_number=2
+GET http://localhost:8000/product/productPagination?row_count=2&page_number=2
 
 
 ###
