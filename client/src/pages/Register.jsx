@@ -16,7 +16,11 @@ function Register(){
     event.preventDefault();
 
     const data = JSON.stringify({user_name,first_name,last_name,email,password});
-    axios.post('http://localhost:5000/register',data,{
+
+
+    axios
+    .post('http://localhost:5000/register',data,{
+
       headers: {'Content-Type': 'application/json'},
     })
     .then(() =>{
@@ -78,11 +82,13 @@ function Register(){
           placeholder='Enter password'
           required
           />
-          <Link to="/register">
-          <button id='register-btn' className='btn btn-primary' >Register.</button>
-          </Link>
+
+          
+          <button id='register-btn' className='btn btn-primary'>Register.</button>
+
           <p>Already Registered?<br />
                 <span>
+                  {/*router link*/}
                   <Link to="/login">Sign in</Link>
                 </span>
             

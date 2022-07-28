@@ -3,11 +3,19 @@ Content-Type: application/json
 
 {
 
+<<<<<<< HEAD
+    "product_name":"Chuck Taylor All Star PRIDE",
+    "price":2999.99,
+    "description":"Hi-top Round Toe Lace Upper Brand detailing ",
+    "category":"converse",
+    "product_image":"https://assets.superbalistcdn.co.za/798x1150/filters:quality(90):format(jpg)/2777897/original.jpg"
+=======
     "product_name":"njjb",
     "price":4650.99,
     "description":"Free your feet. These juniors' Adilette Lite Slides let your toes take in the sun. An extra-soft footbed cushions each step. An adidas Trefoil on top nods back to their sporty origins as a locker room slide for the '70s German football team.",
     "category":"Mens Shoes",
     "product_image":"https://assets.adidas.com/images/w_940,f_auto,q_auto/0a5dae6ca5aa40b1b511ab0b00978546_9366/EG8271_01_standard.jpg"
+>>>>>>> origin/search
 
 
 
@@ -33,11 +41,13 @@ GET http://localhost:8000/product/productPagination?row_count=2&page_number=2
 
 
 ###
-GET http://localhost:8000/product/product/Bycicle
+GET http://localhost:8000/product/product/ADILETTE LITE SLIDES
 
 ###
 
-GET http://localhost:8000/product/search?product_name=jordan
+
+GET http://localhost:8000/product/search?product_name=ADILETTE LITE SLIDES
+
 
 DELETE  http://localhost:8000/product/product/Merrell MR127 Havoc Vent Casual Shoes
 
@@ -47,8 +57,11 @@ POST http://localhost:8000/order/createOrder
 Content-Type: application/json
 
 {
-    "product_id" :"8",
-   "user_id":"1",
-   "quantity":"2"
+    "product_id" :29,
+   "user_id":16,
+   "product_image":"https://assets.superbalistcdn.co.za/798x1150/filters:quality(90):format(jpg)/2777897/original.jpg",
+   "product_name":"Chuck Taylor All Star PRIDE",
+   "price":2999.99,
+   "quantity":2
    
 }
