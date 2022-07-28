@@ -16,7 +16,6 @@ function Register(){
     event.preventDefault();
 
     const data = JSON.stringify({user_name,first_name,last_name,email,password});
-
     axios.post('http://localhost:5000/register',data,{
       headers: {'Content-Type': 'application/json'},
     })
@@ -80,7 +79,7 @@ function Register(){
           required
           />
           <Link to="/register">
-          <button id='register-btn' className='btn btn-primary'>Register.</button>
+          <button id='register-btn' className='btn btn-primary' >Register.</button>
           </Link>
           <p>Already Registered?<br />
                 <span>
