@@ -4,8 +4,6 @@ import logo from '../images/logo1.png'
 import cart from '../images/cart3.svg'
 
 export const Header = () => {
-
-
 const [search, setSearch]=useState('');
  const searchProduct = async(e)=>{
         e.preventDefault();

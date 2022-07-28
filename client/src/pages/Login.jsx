@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom' 
-
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export const Login = () => {
   const[email,setEmail]=useState('')
@@ -20,6 +21,7 @@ export const Login = () => {
  
   return (
     <div className='login'>
+      <Header/>
     <form className="login-form" onSubmit={handleSubmit}>
       <label>Email:</label>
       <input type="email" className="form-control"  placeholder="email" value={email} onChange={(e)=>setEmail(e.target.value)} aria-required/>
@@ -30,9 +32,14 @@ export const Login = () => {
       </Link>
        
          </form>
+<<<<<<< HEAD
          
          <Link to="/register"> <span className="span-register">No Account? Register </span></Link>
   
+=======
+         <Link to="/register"> No Account ?Register </Link>
+  <Footer/>
+>>>>>>> origin/search
 </div>
     
   )
