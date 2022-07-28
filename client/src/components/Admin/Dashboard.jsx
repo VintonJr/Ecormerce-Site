@@ -1,10 +1,11 @@
 import React from 'react'
-import Nav from '../Admin/Nav'
+import Nav from './Admin'
 import Sidebar from '../Admin/Sidebar'
-import Products from '../Admin/Products'
+import CreateProducts from './CreateProducts'
 import  Orders from '../Admin/Orders'
 import  Users from '../Admin/Users'
 import Home from './pages/Home'
+import UpdateProducts from './pages/UpdateProducts'
 
 function Dashboard() {
   return (
@@ -14,7 +15,8 @@ function Dashboard() {
         <div className="container">
             <Sidebar/>
             <Home/>
-            <Products/>
+    <CreateProducts/>
+    <UpdateProducts/>
             <Orders/>
             <Users/>
             

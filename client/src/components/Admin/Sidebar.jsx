@@ -11,6 +11,10 @@ export const Sidebar = () => {
           </h3>
           <ul className="sidebar-list">
           <Link to="/products"> <li className="list-item active">Products</li></Link> 
+
+          <Link to="/create"> <li className="list-item active">CreateProducts</li></Link> 
+          <Link to="/update"> <li className="list-item active">UpdateProducts</li></Link> 
+
             <li className="list-item">Orders</li>
             <li className="list-item">users</li>
 
