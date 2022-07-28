@@ -3,11 +3,11 @@ create or alter PROCEDURE register_queries (
                                           @first_name    VARCHAR(255),
                                           @last_name     VARCHAR(255),
                                           @email        VARCHAR(255),
-                                          @password          VARCHAR(255))										  
-										
+                                          @password          VARCHAR(255),										  
+										  @StatementType  NVARCHAR (20) = '')
 AS
   BEGIN
-     
+      IF @StatementType = 'Insert'
         BEGIN
             INSERT INTO users
                         (
@@ -27,9 +27,14 @@ AS
 						 )
 
         END
-		END
 
-     
+      IF @StatementType = 'Select'
+        BEGIN
+            SELECT *
+            FROM   users
+        END
+        END
+
       
     
     
