@@ -3,7 +3,7 @@ import { Route,Routes,Navigate } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Admin from './components/Admin/Admin';
+import Admin from './components/Admin/Nav';
 import ProductDetail from './pages/ProductDetail'
 import PageNotFound from './pages/PageNotFound'
 import Register from "./pages/Register"
@@ -19,8 +19,7 @@ import Users from './components/Admin/Products';
 function App() {
   return (
     <div className="App">
-     
-      <Header/>
+       
        <Routes>
        
        <Route path="/home" element={<Home/>}/>
@@ -37,7 +36,7 @@ function App() {
        
  
        </Routes>
-       <Footer/>
+      
     </div>
   );
 }

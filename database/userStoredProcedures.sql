@@ -103,7 +103,7 @@ create or alter PROCEDURE product_pagination(
 @page_number int)
 AS
 BEGIN 
-SELECT product_image,price from products
+SELECT product_image,product_name,price from products
 ORDER BY product_id
 offset @row_count* @page_number rows
 fetch next @row_count rows only

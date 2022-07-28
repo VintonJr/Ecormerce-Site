@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import '../css/register.css' 
 import{Link}from'react-router-dom'
 import axios from 'axios'
-
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 function Register(){
   const[user_name, setUsername]=useState('');
@@ -29,6 +30,7 @@ function Register(){
 
   return (
     <div className='register'>
+      <Header/>
       <section className="register-card">
         <h1>Register</h1>
         <form onSubmit={handleSubmit}>
@@ -88,7 +90,7 @@ function Register(){
               </p>
         </form>
       </section>
-
+<Footer/>
     </div>
   )
   }

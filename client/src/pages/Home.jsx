@@ -8,7 +8,8 @@ import { Link, useParams } from 'react-router-dom';
 import c1 from '../images/editedimages.jpg'
 import c2 from '../images/download.jpg'
 import c3 from '../images/main.jpg'
-
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { useDispatch,useSelector } from 'react-redux'
 import { addproducts } from '../features/slices/productsReducer'
 
@@ -34,7 +35,8 @@ export const Home = () => {
     return (
       
     <div className='home'>
-     
+
+     <Header/>
      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
   <div className="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -61,7 +63,6 @@ export const Home = () => {
       <ProductListing products={products}/>
       <Pagination>
         <Pagination.Prev onClick={handlePrevious}/>
-        <Pagination.Item >1</Pagination.Item>
                 <Pagination.Item >{page}</Pagination.Item>
 
     <Pagination.Next  onClick={handleNext}/>
@@ -69,6 +70,7 @@ export const Home = () => {
         <input type="number" id='rowcount' value={rowcount} onChange={e=>setRowcount(e.currentTarget.value)}/>
      
       </div>
+      <Footer/>
       </div>
     
     

@@ -8,9 +8,8 @@ export const Admin = ({product}) => {
   <div className="admin-board">
   <nav className="navbar ">
   <div className="container-fluid">
-  <Link to="/admin">
-     <img className="navbar-brand"  src={logo} alt="site-logo"/></Link>
-  <button className="btn btn-outline-success" type="submit" >Logout</button>
+     <img className="navbar-brand"  src={logo} alt="site-logo"/>
+     <button className="btn btn-outline-success" type="submit" >Logout</button>
         </div>
         </nav>
         

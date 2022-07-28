@@ -4,7 +4,8 @@ import { useDispatch,useSelector } from 'react-redux'
 import { addproducts } from '../features/slices/productsReducer'
 import ProductListing from './ProductListing'
 import { useParams } from 'react-router-dom'
-
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 export const Search = () => {
 
 const {search} =  useParams()
@@ -19,10 +20,10 @@ const products = useSelector(state=>state.products)
      
   return (
     <div>
-            
+        <Header/>    
             <ProductListing products={products}/>
     
-
+<Footer/>
     </div>
   )
 }
