@@ -28,7 +28,9 @@ export const ProductDetail = () => {
         <p>{detail.description}</p>
         <p>Ksh.{detail.price}</p>
         
-        <button className='btn btn-primary'>Add to cart</button>
+        <button 
+            className='btn btn-primary'
+                >Add to cart</button>
         </div>
    
     

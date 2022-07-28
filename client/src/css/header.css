@@ -25,3 +25,14 @@
     border-radius: 5px;
     position: relative;
 }
+
+#search-btn {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.search {
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 10px;
+}

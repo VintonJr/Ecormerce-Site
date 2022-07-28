@@ -19,8 +19,13 @@ description varchar(255),
 category varchar(255),
 product_image varchar(MAX)
 )
+
 create table orders(
 order_id int identity(1,1) Primary Key,
 product_id int FOREIGN KEY REFERENCES products(product_id),
 user_id int FOREIGN KEY REFERENCES users(user_id),
+product_image VARCHAR(MAX) NOT NULL,
+product_name VARCHAR(255) ,
+price DECIMAL(10,2),
 quantity int)
+

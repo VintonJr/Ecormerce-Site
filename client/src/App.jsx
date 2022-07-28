@@ -30,7 +30,7 @@ function App() {
        
  
        </Routes>
-       <Paginator/> 
+        
        <Footer/>
     </div>
   );

@@ -36,3 +36,8 @@ img {
     right: 0;
     padding-bottom: 80px;
 }
+
+.carousel-inner-img {
+    width: 50%;
+    height: 100%;
+}

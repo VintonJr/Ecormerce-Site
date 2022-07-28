@@ -1,31 +1,32 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import '../css/productlisting.css'
-//import { useCart } from 'react-use-cart'
-import { useDispatch,useSelector } from 'react-redux'
-import productDetailReducer from '../features/slices/productDetailReducer'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../features/slices/cartReducer'
 
 export const ProductCard = ({product}) => {
 
-  
-  const cart = useSelector(state=>state)
-  console.log(cart);
-  const dispatch = useDispatch()
+  const dispatch=useDispatch();
+
+ const handleAddToCart = (product)=>{
+
+  dispatch(addToCart(product))
+ }
 
   return (
     <div className='product-card'>
 
       <Link to={`/product/${product.product_name}`}>
       <img src={product.product_image} alt="" /></Link>
-      <p>{product.product_name}</p>
-      <p> {product.category}</p>
-      <p>ksh{product.price}</p>
+      <p>Name:{product.product_name}</p>
+      
+      <p>Price:ksh{product.price}</p>
       
 
       
         <button 
             className='btn btn-primary'
-            onClick={() => dispatch({type: "ADD", payload:product})}
+            onClick={()=> handleAddToCart(product)}
           >Add to cart
         </button>
         

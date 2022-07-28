@@ -1,12 +1,13 @@
 import React,{useEffect} from 'react'
 import ProductListing from '../components/ProductListing'
 import axios from 'axios'
-import c1 from '../images/editedimages.jpg'
-import c2 from '../images/download.jpg'
+import c1 from '../images/978013.jpg'
+import c2 from '../images/top-image-4.jpg'
 import c3 from '../images/main.jpg'
 
 import { useDispatch,useSelector } from 'react-redux'
 import { addproducts } from '../features/slices/productsReducer'
+import Paginator from '../components/Paginator'
 //import { Link } from 'react-router-dom'
 
 const url ="http://localhost:8000/product/viewProduct"
@@ -31,13 +32,13 @@ export const Home = () => {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={c1}  alt="..."/>
+      <img  className="carousel-inner-img" src={c1}  alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src={c2}  alt="..."/>
+      <img className="carousel-inner-img" src={c2}  alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src={c3}  alt="..."/>
+      <img className="carousel-inner-img" src={c3}  alt="..."/>
     </div>
   
   </div>
@@ -48,6 +49,7 @@ export const Home = () => {
       
       <div>
       <ProductListing products={products}/>
+      <Paginator/>
       </div>
       </div>
     

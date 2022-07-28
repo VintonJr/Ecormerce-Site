@@ -23,7 +23,7 @@ const [search, setSearch]=useState('');
      <form className="search- d-flex" onSubmit={searchProduct}>
 
       <input className="search" type="search" placeholder="Search" onChange={changeHandler}  value={search}aria-label="Search"/>
-      <Link to={`/search/${search}`}><button className="btn btn-outline-success" type="submit" >Search</button></Link>
+      <Link to={`/search/${search}`}><button id="search-btn" className="btn btn-primary" type="submit" >Search</button></Link>
 
     </form>
     <div className='cart-span'>
@@ -38,14 +38,10 @@ const [search, setSearch]=useState('');
         </div>
 
 </nav>
-{/*
-      <div>
-
-             {/* <ProductListing products ={products}/> */}
-      {/* {results.map((result) =>{<div key={result.product_id}><p>{result.product_name}</p> </div>})} */}
-      </div>
 
       </div>
+
+      
   )
 }
 

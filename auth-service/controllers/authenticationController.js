@@ -23,8 +23,8 @@ module.exports = {
                 .input('user_name', user_name)
                 .execute('CHECK_USERNAME_EXISTS');
             if (verifyUsername.recordset.length > 0) {
-                return res.status(401).json({
-                    status: 401,
+                return res.status(402).json({
+                    status: 402,
                     message: "Username exists create another"
                 })
             }
