@@ -31,7 +31,7 @@ export const CreateProducts = () => {
   return (
     <div className='create-product'>
       <Admin/>
-        <Sidebar/>
+        
           <section className="product-card">
         <h1>CREATE PRODUCT</h1>
         <form onSubmit={handleSubmit}>

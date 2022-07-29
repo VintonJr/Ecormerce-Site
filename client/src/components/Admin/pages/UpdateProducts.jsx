@@ -30,7 +30,6 @@ export const UpdateProducts = () => {
     
     <div className='create-product'>
         <Admin/>
-        <Sidebar/>
           <section className="product-card">
         <h1> UPDATEPRODUCT</h1>
         <form onSubmit={handleSubmit}>

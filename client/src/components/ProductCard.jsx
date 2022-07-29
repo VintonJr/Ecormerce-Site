@@ -17,26 +17,13 @@ export const ProductCard = ({product}) => {
     <div className='product-card'>
       <Link to={`/product/${product.product_name}`}>
       <img src={product.product_image} alt="" /></Link>
-<<<<<<< HEAD
-      <p>Name:{product.product_name}</p>
+      <p>Name: {product.product_name}</p>
+      <p>Price: Ksh {product.price}</p>
       
-      <p>Price:ksh{product.price}</p>
-      
-
-      
-        <button 
-            className='btn btn-primary'
-            onClick={()=> handleAddToCart(product)}
-          >Add to cart
-        </button>
+      <Link to="/cart"> <button className='btn btn-primary'onClick={()=> handleAddToCart(product)}>Add to cart
+        </button></Link>
         
 
-=======
-      <p>{product.product_name}</p>
-      <p> {product.category}</p>
-      <p>ksh{product.price}</p>
-      <Link to="/cart"><button className='btn btn-primary'>Add to cart</button></Link>
->>>>>>> origin/search
     </div>
   )
 }

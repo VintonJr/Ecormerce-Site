@@ -13,16 +13,13 @@ const [search, setSearch]=useState('');
   } 
    return (
     <div className='header'>
-      
-<nav className="navbar ">
+     <nav className="navbar ">
   <div className="container-fluid">
     <Link to="/home">
      <img className="navbar-brand"  src={logo} alt="site-logo"/></Link>
      <form className="search- d-flex" onSubmit={searchProduct}>
-
       <input className="search" type="search" placeholder="Search" onChange={changeHandler}  value={search}aria-label="Search"/>
       <Link to={`/search/${search}`}><button id="search-btn" className="btn btn-primary" type="submit" >Search</button></Link>
-
     </form>
     <div className='cart-span'>
     <Link to={"/Cart"}>
@@ -30,7 +27,6 @@ const [search, setSearch]=useState('');
        </Link>
        <span >0</span>
     </div>
-
         <Link to="/register" className="nav-link" ><><button className='btn btn-primary'>Register</button></></Link>
         <Link to="/login" className="nav-link" ><button className='btn btn-primary'>Login</button></Link>
         </div>

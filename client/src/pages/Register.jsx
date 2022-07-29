@@ -23,7 +23,11 @@ function Register(){
 
       headers: {'Content-Type': 'application/json'},
     })
-    .then(() =>{
+    .then((res) =>{
+      if (res.data.accessToken){
+        localStorage.setItem("user",JSON.stringify(res.data))
+      }
+      return res.data
       console.log('Registered successful!')
     });
   };

@@ -1,27 +1,17 @@
 import React,{useEffect,useState} from 'react'
 import ProductListing from '../components/ProductListing'
 import axios from 'axios'
-<<<<<<< HEAD
 import c1 from '../images/978013.jpg'
 import c2 from '../images/top-image-4.jpg'
-=======
 import 'bootstrap/dist/css/bootstrap.css';
 import Pagination from 'react-bootstrap/Pagination';
 
-import { Link, useParams } from 'react-router-dom';
-import c1 from '../images/editedimages.jpg'
-import c2 from '../images/download.jpg'
->>>>>>> origin/search
 import c3 from '../images/main.jpg'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useDispatch,useSelector } from 'react-redux'
 import { addproducts } from '../features/slices/productsReducer'
-<<<<<<< HEAD
-import Paginator from '../components/Paginator'
 //import { Link } from 'react-router-dom'
-=======
->>>>>>> origin/search
 
 export const Home = () => {
   const[page,setPage]=useState(1)
@@ -43,14 +33,10 @@ export const Home = () => {
   }, [page,rowcount])
     // console.log(products)
     return (
-      
+      <>
+      <Header/>
     <div className='home'>
-
-<<<<<<< HEAD
-     
-=======
-     <Header/>
->>>>>>> origin/search
+  
      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
   <div className="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -76,22 +62,16 @@ export const Home = () => {
       
       <div>
       <ProductListing products={products}/>
-<<<<<<< HEAD
-      <Paginator/>
-=======
       <Pagination>
         <Pagination.Prev onClick={handlePrevious}/>
                 <Pagination.Item >{page}</Pagination.Item>
-
     <Pagination.Next  onClick={handleNext}/>
-       </Pagination>
         <input type="number" id='rowcount' value={rowcount} onChange={e=>setRowcount(e.currentTarget.value)}/>
-     
->>>>>>> origin/search
+     </Pagination>
       </div>
       <Footer/>
       </div>
-    
+    </>
     
   )
 }

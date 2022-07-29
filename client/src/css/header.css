@@ -1,6 +1,13 @@
 .header {
     color: black;
-    background-color: rgb(231, 224, 224);
+    background-color: burlywood;
+}
+.navbar{
+    margin-top:0;
+    margin-bottom:10px;
+
+    background-color: burlywood;
+
 }
 
 .cart {

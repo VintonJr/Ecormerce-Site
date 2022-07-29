@@ -7,6 +7,8 @@ import PageNotFound from './pages/PageNotFound'
 import Register from "./pages/Register"
 import Login from './pages/Login';
 import Cart from './pages/Cart';
+import Header from './components/Header'
+
 import Search from './components/Search'
 import Products from './components/Admin/Products';
 import  CreateProducts  from './components/Admin/CreateProducts';
@@ -40,12 +42,7 @@ function App() {
        
  
        </Routes>
-<<<<<<< HEAD
         
-       <Footer/>
-=======
-      
->>>>>>> origin/search
     </div>
   );
 }
