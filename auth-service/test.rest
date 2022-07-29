@@ -3,10 +3,10 @@ Content-Type: application/json
 
 {
  
- "user_name":"mjhhbnno", 
+ "user_name":"mnbvcxzssdfgh", 
 "first_name":"kim", 
 "last_name":"baohg", 
-"email":"mjhhhhjy@gmail.com", 
+"email":"456rty@gmail.com", 
 "password":"ygu5r675q#"  
 
 }

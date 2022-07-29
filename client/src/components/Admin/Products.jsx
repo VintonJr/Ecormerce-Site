@@ -19,6 +19,7 @@ export const Products = () => {
       headers: {'Content-Type': 'application/json'},
     })
     .then(() =>{
+      alert( 'Product Created successful!')
       console.log(' Product Created successful!')
     });
   };
@@ -72,9 +73,9 @@ export const Products = () => {
           />
           <label>Image:</label>
           <input
-          type="file"
+          type="text"
           value={product_image}
-        onChange={handleChange}
+        onChange={(e) => setImage(e.target.value)}
           />
           
           <button id='register-btn' className='btn btn-primary'>Create</button>

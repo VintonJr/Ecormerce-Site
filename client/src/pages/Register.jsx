@@ -1,30 +1,46 @@
 import React, { useState } from 'react'
 import '../css/register.css' 
-import{Link}from'react-router-dom'
+import{Link, useNavigate}from'react-router-dom'
 import axios from 'axios'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-function Register(){
-  const[user_name, setUsername]=useState('');
-  const[first_name,setFirstName]=useState('');
-  const[last_name,setLastName]=useState('');
-  const[email,setEmail]=useState('');
-  const[password,setPassword]=useState('');
+const Register = () => {
+  
+  const initialValues = {
+    "user_name":"",
+    "first_name":"",
+    "last_name":"",
+    "email":"",
+    "password":"",
+    
+  };
 
-  const handleSubmit = (event) =>{
-    event.preventDefault();
+  const [values,setValues]=useState(initialValues);
 
-    const data = JSON.stringify({user_name,first_name,last_name,email,password});
-
-    axios
-    .post('http://localhost:5000/register',data,{
-      headers: {'Content-Type': 'application/json'},
-    })
-    .then(() =>{
-      console.log('Registered successful!')
+  const navigate = useNavigate();
+  
+  const handleInputChange = (e) => {
+    const {name,value} = e.target;
+    setValues ({
+      ...values,
+      [name]:value,
     });
   };
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    axios
+    .post('http://localhost:5000/register',values).then(
+      res => {
+        alert("Registered successfuly!")
+        navigate('/login')
+      }
+    ).catch (err =>{
+      console.log(err)
+    })
+  }
   
 
 
@@ -34,13 +50,13 @@ function Register(){
       <Header/>
       <section className="register-card">
         <h1>Register</h1>
-        <form onSubmit={handleSubmit}>
+        <form >
           <label>Username:</label>
           <input 
           type="text"
           id="username"
-          value={user_name}
-          onChange={(e) => setUsername(e.target.value)}
+          name='user_name'
+          onChange={handleInputChange}
           placeholder="Enter Username"
           required
           />
@@ -48,8 +64,8 @@ function Register(){
           <input
           type="text"
           id="firstname"
-          value={first_name}
-          onChange={(e) => setFirstName(e.target.value)}
+          name='first_name'
+          onChange={handleInputChange}
           placeholder='Enter First name'
           required
           />
@@ -57,8 +73,8 @@ function Register(){
           <input
           type="text"
           id="lasttname"
-          value={last_name}
-          onChange={(e) => setLastName(e.target.value)}
+          name='last_name'
+          onChange={handleInputChange}
           placeholder='Enter Last Name'
           required
           />
@@ -66,8 +82,8 @@ function Register(){
           <input
           type="email"
           id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          name='email'
+          onChange={handleInputChange}
           placeholder='Enter email'
           required
           />
@@ -75,13 +91,16 @@ function Register(){
           <input
           type="password"
           id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          name='password'
+          onChange={handleInputChange}
           placeholder='Enter password'
           required
           />
           
-          <button id='register-btn' className='btn btn-primary'>Register.</button>
+          <button 
+              id='register-btn' 
+              className='btn btn-primary'
+              onClick={(e)=>{handleSubmit(e)}}>Register.</button>
           <p>Already Registered?<br />
                 <span>
                   {/*router link*/}

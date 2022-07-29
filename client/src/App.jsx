@@ -36,12 +36,8 @@ function App() {
        
  
        </Routes>
-<<<<<<< HEAD
         
        <Footer/>
-=======
-      
->>>>>>> origin/search
     </div>
   );
 }

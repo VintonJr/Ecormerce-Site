@@ -1,9 +1,12 @@
 import React from 'react'
 import '../css/cart.css'
 import { useSelector,useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { addToCart, getTotals,decreaseCart,removeFromCart,clearCart,cartItem } from '../features/slices/cartReducer'
 import { useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
+import Header from '../components/Header';
 
 
 
@@ -14,9 +17,13 @@ export const Cart = () => {
     const cart = useSelector(state=>state.cart)
     console.log(cart);
     const dispatch=useDispatch();
+    const navigate = useNavigate();
     useEffect(() => {
         dispatch(getTotals());
       }, [cart, dispatch])
+
+    const user =JSON.parse(localStorage.getItem("currentUser")) ;
+    const token = JSON.parse(localStorage.getItem("currentToken"));
 
  const handleAddToCart = (product)=>{
 
@@ -31,28 +38,41 @@ export const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
-    // const[user_id,setUserId]=useState('');
-    // const[product_id,setProductId]=useState('');
-    // const[product_image,setProductImage]=useState('');
-    // const[product_name,setProductName]=useState('');
-    // const[price,setPrice]=useState('');
-    // const[quantity,setQuantity]=useState('');
-
-    // const handleSubmit = (event) =>{
-    //     event.preventDefault();
     
-    //     const data = JSON.stringify({user_name,first_name,last_name,email,password});
-    
-    //     axios
-    //     .post('http://localhost:8000/order/createOrder',data,{
-    //       headers: {'Content-Type': 'application/json'},
-    //     })
-    //     .then(() =>{
-    //       console.log('Order successful!')
-    //     });
-    //   };
+  const url = 'http://localhost:8000/order/createOrder'
+  const [message,setMessage]=useState('')
 
+  const handlePlaceOrder= () => {
+    setMessage ('Adding...');
+
+    axios.post(url, {
+        "product_id":"",
+        "user_id":"user_id",
+        "items":JSON.stringify(cart),
+        "items_count":cart.cartTotalQuantity,
+        "total":cart.cartTotalAmount
+
+    }, {headers: {
+        "Authorisation":token
+    }}).then((res) => {
+        console.log(res)
+        setMessage('Order created successfully!');
+    })
+    .catch(
+        (err) => {
+            console.log(err);
+            if(err.response.status === 403){
+                localStorage.clear();
+                alert("Please log in again to continue")
+                navigate('/login')
+            }
+            setMessage('An error occured, Try again!')
+        }
+    )
+  }
   return (
+    <>
+    <Header />
     
     <div className="container-fluid py-3">
         <div className="row justify-content-center">
@@ -137,7 +157,10 @@ export const Cart = () => {
                     <span className="amount">Ksh.{cart.cartTotalAmount}</span>
                 </div>
                 <div className='d-flex justify-content-end'>
-                <button className='btn btn-primary' >CheckOut</button>
+                <button 
+                    className='btn btn-primary'
+                    onClick={()=> {handlePlaceOrder()}} 
+                >CheckOut</button>
             </div>
             <div>
             <Link to={"/home"}>
@@ -152,6 +175,7 @@ export const Cart = () => {
                 
         </div>
     </div>
+    </>
        
      
   )
